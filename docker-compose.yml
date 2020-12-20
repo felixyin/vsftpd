@@ -1,0 +1,27 @@
+version: "3.1"
+
+services:
+  # docker run -d -v /my/data/directory:/home/vsftpd \
+  # -p 20:20 -p 21:21 -p 21100-21110:21100-21110 \
+  # -e FTP_USER=myuser -e FTP_PASS=mypass \
+  # -e PASV_ADDRESS=127.0.0.1 -e PASV_MIN_PORT=21100 -e PASV_MAX_PORT=21110 \
+  # --name vsftpd --restart=always fauria/vsftpd
+  vsftpd:
+    # build: ./vsftpd
+    image: qtrj.i234.me:8084/fauria/vsftpd
+    container_name: vsftpd
+    hostname: vsftpd
+    restart: always
+    ports:
+      - "20:20"
+      - "21:21"
+      - "21100-21110:21100-21110"
+    volumes:
+      - ./vsftpd/files:/home/vsftpd
+      - ./vsftpd/log:/var/log/vsftpd
+    environment:
+      FTP_USER: "admin"
+      FTP_PASS: "123456"
+      PASV_ADDRESS: "127.0.0.1"
+      PASV_MIN_PORT: "21100"
+      PASV_MAX_PORT: "21110"

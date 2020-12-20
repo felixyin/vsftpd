@@ -1,0 +1,9 @@
+POST http://127.0.0.1:8080/file
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="1.png"
+Content-Type: application/octet-stream
+
+< ./1.png
+--MyBoundary--
