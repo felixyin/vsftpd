@@ -1,3 +1,9 @@
+### 文件内容为hello
+GET http://localhost:8000/admin/a.txt
+Accept: application/text
+
+
+### 上传图片测试
 POST http://127.0.0.1:8080/file
 Content-Type: multipart/form-data; boundary=MyBoundary
 
@@ -7,3 +13,8 @@ Content-Type: application/octet-stream
 
 < ./1.png
 --MyBoundary--
+
+
+### 获取图片测试
+GET http://localhost:8000/admin/16084617566891.png
+Accept: image/png

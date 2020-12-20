@@ -25,3 +25,15 @@ services:
       PASV_ADDRESS: "127.0.0.1"
       PASV_MIN_PORT: "21100"
       PASV_MAX_PORT: "21110"
+  nginx:
+#    docker run -it qtrj.i234.me:8084/nginx bash
+#    docker cp cid:/etc/nginx ./nginx/
+    image: qtrj.i234.me:8084/nginx
+    volumes:
+      - ./nginx/nginx:/etc/nginx/
+      - ./vsftpd/files:/usr/share/nginx/html
+    ports:
+      - "8000:80"
+    environment:
+      - NGINX_HOST=www.xxx.com
+      - NGINX_PORT=80
