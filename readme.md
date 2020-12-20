@@ -7,7 +7,7 @@
 - springboot
 - vscode
 
-## 启动
+## 启动ftp服务器
 
 1. docker-compose up
 2. 访问测试，浏览器访问： ftp://admin:123456@127.0.0.1
@@ -19,4 +19,4 @@ FtpTest.java
 ## web upload download
 
 1. run spring boot
-2. 执行：src/test/test-upload-file.http
+2. 测试上传和下载：src/test/test-upload-file.http
