@@ -33,3 +33,8 @@ build/
 .vscode/
 *.log
 vsftpd/files/
+
+### mvn ###
+.mvn
+mvnw
+mvnw.cmd
